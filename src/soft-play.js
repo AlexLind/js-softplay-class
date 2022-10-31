@@ -4,6 +4,8 @@ class Softplay {
   constructor(numAdults, numChildren) {
     this.numAdults = numAdults
     this.numChildren = numChildren
+    this.totalAdults = numAdults
+    this.totalChildren = numChildren
   }
 
   enter(numAdults, numChildren) {
@@ -11,6 +13,8 @@ class Softplay {
     if (shouldAdd) {
       this.numAdults = this.numAdults + numAdults
       this.numChildren = this.numChildren + numChildren
+      this.totalAdults = this.totalAdults + numAdults
+      this.totalChildren = this.totalChildren + numChildren
       return true
     }
     return false
@@ -43,6 +47,14 @@ class Softplay {
       children: this.numChildren
     }
   }
+
+  total() {
+    return {
+        adults: this.totalAdults,
+        children: this.totalChildren
+    }
+  }
+
 }
 
 // TODO: Change the undefined value below to the name of your class
